@@ -1,0 +1,52 @@
+<%- include('./includes/title')  %>
+   <link rel="stylesheet" href="/css/errors.css">
+
+<div class="error-wrapper">
+    <section class="circle-box">
+        <div class="circle"></div>
+    </section>
+    <section class="contents">
+        <h1 class="title">Errors related to our forms</h1>
+    
+        <div class="questions-container">
+            <div class="question">
+                <button>
+                    <span>What is the correct username format?</span>
+                    <i class="fas fa-chevron-down d-arrow"></i>
+                </button>
+                <p>"Username must be 3 to 16 characters and contain only letters, numbers, and underscores, it may contain spaces, but should not end with spaces, for security reasons."</p>
+            </div>
+    
+            <div class="question">
+                <button>
+                    <span>What is the correct email format?</span>
+                    <i class="fas fa-chevron-down d-arrow"></i>
+                </button>
+                <p>"Email should not be empty and must contain some letters and .  after @  with some characters, letters, numbers, dots or underscores before"</p>
+            </div>
+    
+            <div class="question">
+                <button>
+                    <span>What is the correct phone number format?</span>
+                    <i class="fas fa-chevron-down d-arrow"></i>
+                </button>
+                <p>"Please start with a country code: Dubai (+971), Tanzania (+255), Kenya (+254), Uganda (+256) or China (+86), then do not proceed with zero, instead continue with rest of your phone number"</p>
+            </div>
+    
+            <div class="question">
+                <button>
+                    <span>What is the limit of message input?</span>
+                    <i class="fas fa-chevron-down d-arrow"></i>
+                </button>
+                <p>"The length of your message should not exceed 250 words but more than or equal to a character, for security reasons"</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="right">
+        <div id="right-box"></div>
+    </section>
+</div>
+<!-- external js-->
+<script src="/js/error.js"></script>
+<%- include('./includes/footer') %>

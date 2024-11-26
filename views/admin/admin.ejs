@@ -1,0 +1,155 @@
+<%- include('../includes/title.ejs') %>
+<link rel="stylesheet" href="/css/adminDashboard.css">
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Admin Panel</h2>
+            <nav>
+                <ul>
+
+                    <li><a class="nav-link active" data-section="dashboard">Dashboard</a></li>
+                    <li><a class="nav-link" data-section="addProduct">Add Product</a></li>
+                    <li><a class="nav-link" data-section="details">Add Product Details</a></li>
+                    <li><a class="nav-link" data-section="edit">Products Actions</a></li>
+                    <li><a class="nav-link" data-section="categories">View Categories</a></li>
+                    <li><a class="nav-link" data-section="order_details">Order Details</a></li>
+                    <li><a class="nav-link" data-section="logout"><button id="logout">Logout</button></a></li>
+                    <!-- Add more links as needed -->
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard">
+                <h1>Dashboard</h1>
+                
+                <!-- Statistics Cards -->
+                <div class="stats-cards">
+                    <div class="card">
+                        <h3>Total Users</h3>
+                        <p id="totalUsers"><%= users.length %></p>
+                    </div>
+                    <div class="card">
+                        <h3>Valid Users</h3>
+                        <p id="activeUsers"><%= verifiedUsersCount %></p>
+                    </div>
+                    <div class="card">
+                        <h3>Total Orders</h3>
+                        <p id="totalOrders"> <%= totalOrders %> </p>
+                    </div>
+                    <div class="card">
+                        <h3>Pending Orders</h3>
+                        <p id="pendingOrders"><%= pendingOrdersCount %></p>
+                    </div>
+                    <div class="card">
+                        <h3>Total Sales (TZS:)</h3>
+                        <p id="totalSales"><%= Number(allSales).toLocaleString('en-US', { maximumFractionDigits: 0 }) %>/=</p>
+                    </div>                    
+                    
+                    <div class="card">
+                        <h3>Total Products</h3>
+                        <p id="totalProducts"><%= products.length %></p>
+                    </div>
+                </div>
+
+                <!-- Sales Chart -->
+                <div class="chart-container">
+                    <h2>Sales Over Time</h2>
+                    <div class="container">
+                        <button id="drawButton">Draw Sales Graph</button>
+                        <h1 class="salesTitle">Sales Graph</h1>
+                        <canvas id="salesChart" width="600" height="400" style="display:none;"></canvas>
+                    </div>
+                </div>
+
+                <!-- Recent Orders Table -->
+                <div class="recent-section">
+                    <h2>Recent Orders</h2>
+                    <input type="search" id="recent-orders" placeholder="Search by Customer Name">
+                    <table class="recent-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Total (TZS):</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentOrders">
+                                <% orders.forEach(order => { %>
+                                    <tr>
+                                        <td><%= order.order_id %></td>
+                                        <td><%= order.username %></td>
+                                        <td><%= new Date(order.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></td>
+                                        <td><%= order.status %></td>
+                                        <td><%= parseFloat(order.total_price).toLocaleString() %>/=</td>
+                                    </tr>
+                                <% }) %>         
+                        </tbody>
+                    </table>
+                    <button id="unused-orders">Delete unused orders</button>
+                </div>
+                
+                
+
+                <!-- Recent Users Table -->
+                <div class="recent-section">
+                    <h2>Recent Users</h2>
+                    <input type="search" id="recent-users" placeholder="Search by Customer Name">
+                    <table class="recent-table">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Customer</th>
+                                <th>Email</th>
+                                <th>Registered Date</th>
+                                <th>role</th>
+                                <th>Verified?</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentUsers">
+                            <% users.forEach(user => { %>
+                                <tr>
+                                    <td><%= user.id %></td>
+                                    <td><%= user.username %></td>
+                                    <td><%= user.email %></td>
+                                    <td><%= new Date(user.created_at).toLocaleDateString() %></td> <!-- Format date as needed -->
+                                    <td><%= user.role %></td>
+                                    <td><%= user.is_verified ? 'Yes' : 'No' %></td>
+                                    <td><button class="deleteUser" data-user-id="<%= user.id %>" title="Delete User"><i class="fa-solid fa-trash"></i></button></td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Add Product Section -->
+            <%- include('../admin/add-product') %>
+
+            <!-- Product Details  -->
+            <%- include('../admin/product-details') %>
+
+            <!-- Edit products and update -->
+             <%- include('../admin/Editproducts') %>
+
+            <!-- Categories -->
+             <%- include('../admin/categories') %>
+
+            <!-- Order Details -->
+            <%- include('../admin/order_details') %>
+        </main>
+    </div>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/adminDashboard.js"></script>
+    <%- include('../includes/footer') %>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+* {
+    font-family: 'Poppins', sans-serif; /* Added fallback font */
+}
+
+body {
+    background-color: #ecf0f1;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1.6; /* Improved line height for better readability */
+}
+
+.Edit-details.this {
+    max-width: 800px; /* Set a maximum width for the form container */
+    background-color: #fff; /* White background for the form */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* Increased padding for a more spacious layout */
+    margin: 20px auto; /* Center the form on the page */
+}
+
+h1 {
+    color: #333; /* Darker color for the heading */
+    font-size: 28px; /* Increased font size for the heading */
+    margin-bottom: 20px; /* Added margin for spacing */
+}
+
+.alert {
+    margin-bottom: 20px;
+    padding: 15px; /* Increased padding for alerts */
+    border-radius: 5px;
+    font-size: 16px; /* Increased font size for better readability */
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Added spacing between form groups */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px; /* Increased margin for better spacing */
+    font-size: 16px; /* Font size for labels */
+    font-weight: 600; /* Slightly bolder for emphasis */
+}
+
+input[type="number"],
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 12px; /* Increased padding for inputs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    font-size: 16px; /* Font size for inputs */
+}
+
+input[type="number"]:hover,
+input[type="text"]:hover,
+textarea:hover,
+input[type="file"]:hover {
+    border-color: #2c3e50; /* Change border color on hover */
+}
+
+button.btn {
+    background-color: #2c3e50; /* Button background color */
+    color: white; /* Text color */
+    padding: 12px 20px; /* Increased padding for buttons */
+    border: none;
+    font-family: 'Poppins', monospace;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Font size for buttons */
+    transition: background-color 0.3s;
+}
+
+button.btn:hover {
+    background-color: #1a242f; /* Darker shade on hover */
+}
+
+/* File upload button styles */
+input[type="file"]::-webkit-file-upload-button {
+    background-color: #2c3e50; /* Primary color for the button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #5681ac; /* Slightly lighter on hover */
+}
+
+/* Additional spacing for selected images count */
+#imageCount {
+    font-size: 14px; /* Font size for image count */
+    color: #555; /* Darker color for better readability */
+}
+
+/* Warning message styling */
+#warning {
+    font-size: 14px;
+    color: #e74c3c; /* Red color for warnings */
+    margin-top: 5px; /* Added margin for spacing */
+}

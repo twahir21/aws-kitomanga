@@ -1,0 +1,114 @@
+<%- include('../includes/navigation') %>
+
+<!-- YOUR CSS LINK  -->
+<link rel="stylesheet" href="/css/shop.css">
+
+<!-- #------ IMAGE CONTAINER ------ -->
+<section class="home-image" id="homeImage">
+    <div class="image">
+        <div class="slide">
+            <img src="/img/banner-1.jpg" alt="Image 1">
+            <div class="text-overlay">
+                <h2>Trending Item</h2>
+                <h1>WOMEN'S LATEST FASHION SALE</h1>
+                <h3>Starting at $ <span class="hela">20</span>.00</h3>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="/img/banner-2.jpg" alt="Image 2">
+            <div class="text-overlay">
+                <h2>Exclusive Offers</h2>
+                <h1>SUMMER COLLECTION 2024</h1>
+                <h3>Up to 50% Off</h3>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="/img/banner-3.jpg" alt="Image 3">
+            <div class="text-overlay">
+                <h2>New Arrivals</h2>
+                <h1>WINTER FASHION TRENDS</h1>
+                <h3>From $ <span class="hela">30</span>.00</h3>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="/img/banner-2.jpg" alt="Image 4">
+            <div class="text-overlay">
+                <h2>Best Sellers</h2>
+                <h1>TOP PRODUCTS OF THE YEAR</h1>
+                <h3>Prices Starting at $ <span class="hela">15</span>.00</h3>
+            </div>
+        </div>
+    </div>
+    <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+</section>
+
+<script src="../js/navigation.js"></script>
+
+<!-- PRODUCTS  -->
+<h1 id="all-products-title">ALL PRODUCTS</h1>
+
+
+<div class="product-container">
+    <% if (productLists.length > 0) { %>
+        <% productLists.forEach(product => { 
+            const rating = parseFloat(product.rating);
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 !== 0 ? 1 : 0;
+            const emptyStars = 5 - fullStars - halfStar;
+        %>
+        <div class="product" data-category-id="<%= product.categories %>">
+            <div class="image">
+                <img src="<%= product.image_url %>" alt="Image of <%= product.product_name %>">
+                <button class="add-wishlist" 
+                        data-product-id="<%= product.id %>" 
+                        data-product-image="<%= product.image_url %>" 
+                        data-product-title="<%= product.product_name %>" 
+                        data-product-price="<%= product.price %>" 
+                        data-product-link="/product-details/<%= product.id %>" 
+                        title="ADD TO WISHLIST">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+            </div>
+        
+            <div class="brand">
+                <p> <%= product.brand %> </p>  
+            </div>
+            <div class="text">
+                <h1><%= product.product_name %></h1>
+            </div>
+        
+            <div class="rating-stars">
+                <% for (let i = 0; i < fullStars; i++) { %>
+                    <span class="star"><i class="fa-solid fa-star"></i></span>
+                <% } %>
+                <% if (halfStar) { %>
+                    <span class="star"><i class="fa-regular fa-star-half-stroke"></i></span>
+                <% } %>
+                <% for (let i = 0; i < emptyStars; i++) { %>
+                    <span><i class="fa-regular fa-star"></i></span>
+                <% } %>
+            </div>
+        
+            <div class="product-price">
+                <h2>TZS:<%= product.price %>/=</h2>
+            </div>
+        
+            <div class="product-footer">
+                <a href="/product-details/<%= product.id %>">
+                    <button>
+                        VIEW DETAILS
+                    </button>
+                </a>
+            </div>
+        </div>
+        <% }); %>
+        
+    <% } else { %>
+        <h2 id="no-item">No Product to be displayed.</h2>
+    <% } %>
+</div>
+
+<script src="../js/shopPage.js"></script>
+<%- include('../includes/footer.ejs') %>
+

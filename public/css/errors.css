@@ -1,0 +1,162 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Main Wrapper */
+.error-wrapper {
+    color: #D71313;
+    background-color: #e4e7e9;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh; /* Changed from height to min-height */
+    position: relative;
+    overflow: hidden; /* Prevents content overflow */
+}
+
+.top-head{
+    max-height: 100px;
+}
+
+/* Content Section */
+.content {
+    width: 100%;
+    padding: 20px; /* Added padding for better spacing */
+}
+
+/* Circle Decorations */
+.circle-box {
+    width: 20%;
+    position: relative; /* Ensure it's within the flow */
+}
+
+.right {
+    width: 20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative; /* Ensure it's within the flow */
+}
+
+/* Circle Styling */
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px; 
+    height: 150px; 
+    border: 50px solid #D71313; 
+    border-top: none; 
+    border-left: none; 
+    border-bottom-right-radius: 120px; 
+    background-color: transparent; 
+}
+
+.right #right-box {
+    position: absolute; /* Ensure it's positioned correctly */
+    bottom: 0;
+    right: 0;
+    width: 150px; 
+    height: 150px; 
+    background: #D71313; 
+    border-top-left-radius: 70%;
+}
+
+/* Title Styling */
+.title {
+    font-size: 28px;
+    text-align: center;
+    margin: 80px 0 40px 0;
+    color: #0D1282; /* Enhanced contrast */
+}
+
+/* FAQ Container */
+.questions-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px; /* Added padding for smaller screens */
+}
+
+.question {
+    border-bottom: 1px solid #0D1282; /* Enhanced visibility */
+    margin-bottom: 10px; /* Added spacing between questions */
+}
+
+.question button {
+    width: 100%;
+    background-color: #173B45;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    border: none;
+    outline: none;
+    color: #F1DEC6;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 19px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.question button:hover {
+    background-color: #0D1282; /* Hover effect for better UX */
+}
+
+.question p {
+    max-height: 0;
+    opacity: 0;
+    line-height: 1.5;
+    overflow: hidden;
+    background-color: #F8EDED;
+    color: #0D1282;
+    transition: all 0.6s ease;
+    border-radius: 0 0 10px 10px; /* Rounded corners for expanded content */
+}
+
+.d-arrow {
+    transition: transform 0.5s ease-in;
+    color: #F1DEC6;
+}
+
+/* Show Expanded Answer */
+.question p.show {
+    max-height: 500px; /* Increased max-height for longer content */
+    opacity: 1;
+    padding: 15px;
+}
+
+/* Rotate Arrow Icon */
+.question button .d-arrow.rotate {
+    transform: rotate(180deg);
+}
+
+/* Responsive Design */
+@media (max-width: 830px) and (min-width: 631px) {
+    .circle-box,
+    .right {
+        display: none;
+    }
+
+    .error-wrapper {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 630px) {
+    .circle-box,
+    .right {
+        display: none;
+    }
+
+    .error-wrapper {
+        padding: 20px;
+    }
+
+    .title {
+        margin-top: 60px; /* Adjusted for smaller screens */
+    }
+}

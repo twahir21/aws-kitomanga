@@ -1,0 +1,76 @@
+<%- include('../includes/title') %> 
+
+    <link rel="stylesheet" href="/css/login.css">
+    <div class="login-body">
+
+    <!-- Success Message -->
+    <% if (success_msg) { %>
+        <div id="flash-success" data-message="<%= success_msg %>" style="display:none;"></div>
+    <% } %>
+
+    <!-- Error Message -->
+    <% if (error_msg) { %>
+        <div id="flash-error" data-message="<%= error_msg %>" style="display:none;"></div>
+    <% } %>
+
+    <!-- Validation Errors -->
+    <% if (errors && errors.length > 0) { %>
+        <div id="flash-validation-errors" data-errors='<%= JSON.stringify(errors) %>' style="display:none;"></div>
+    <% } %>
+        <div class="container" id="container">
+            <div class="form-container sign-up" id="sign-up">
+                <form id="signup-form" action="/signup" autocomplete="off" method="post">
+                    <h1>Create Account</h1>
+                    <input type="text" id="usernameSignup" placeholder="Username" name="usernameSignup" required>
+                    <input type="email" id="email" placeholder="Email" name="email" required>
+                    <input type="text" id="phone" placeholder="Phone e.g. +255-xx-xxx-xxxx" name="phone" required>      
+                    <div class="input-container">
+                        <input type="password" id="signup-password" placeholder="Password" name="password">
+                        <i class="fa-solid fa-eye-slash" id="toggle-signup-password"></i>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm Password">
+                        <i class="fa-solid fa-eye-slash" id="toggle-confirm-password"></i>
+                    </div>
+                    <button type="submit" id="sign-up-button">Sign Up</button>
+                    <p id="loginLink-text">Already have an account? <a id="loginLink">Login</a></p>
+                </form>
+            </div>
+            <div class="form-container sign-in" id="sign-in">
+                <form id="login-form" action="/login" method="post">
+                    <img src="./img/sign-up.jpg" alt="image of sign up">
+                    <h1>Sign In</h1>
+                    <input type="text" id="usernameLogin" placeholder="Username" name="username" required>
+    
+                    <div class="input-container">
+                        <input type="password" placeholder="Password" id="login-password" name="password">
+                        <i class="fa-solid fa-eye-slash" id="toggle-login-password"></i>
+                    </div>
+    
+                    <a href="/forgot-password" class="forget">Forgot Your Password?</a>
+                    <button id="sign-in-button" type="submit">Sign In</button>
+                    <div class="sign-paragraph">
+                        <p class="sign-text">Don't have an account? <a id="sign-Link">Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Welcome Back!</h1>
+                        <p class="paragraph">Unlock exclusive features and elevate your shopping experience with personalized access.</p>
+                        <button class="hidden" id="login">Sign In</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Hello, Friend!</h1>
+                        <p class="paragraph">Join our community today and discover a world of exclusive benefits tailored just for you.</p>
+                        <button class="hidden" id="register">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/login_public.js"></script>
+    <script src="/js/flash_messages.js"></script>
+    <%- include('../includes/footer.ejs') %>
+

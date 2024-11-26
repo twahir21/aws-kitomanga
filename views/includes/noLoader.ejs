@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitomanga</title>
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <link rel="stylesheet" href="/css/navigation.css">
+    <style>
+        html{
+            max-width: 2000px;
+        }
+    </style>
+</head>
+
+
+<!-- # ------ TOP HEADER -----  -->
+<section class="top-head">
+
+    <div class="social-media">
+        <span><i class="fa-brands fa-facebook"></i></span>
+        <span><i class="fa-brands fa-instagram"></i></span>
+        <span><i class="fa-brands fa-twitter"></i></span>
+    </div>
+
+    <div class="title top">
+        <h1>KITOMANGA CARGO AND ONLINE SHOPPING</h1>
+    </div>
+
+    <div class="top-head-actions">
+
+        <select name="currency" title="currency">
+
+            <option value="usd">USD &dollar;</option>
+            <option value="tzs">TZS</option>
+            <option value="kes">KES</option>
+            <option value="ugx">UGX</option>
+            <option value="aed">AED</option>
+            <option value="cyn">CYN</option>
+
+
+          </select>
+
+          <select name="language" title="currency">
+
+            <option value="en-US">English</option>
+            <option value="sw">Swahili</option>
+            <option value="ar">العربية</option>
+
+
+          </select>
+    </div>
+</section>
+
+
+<!-- # -------- THIRD HEADER ------ -->
+<section class="navigation">
+    <ul>
+        <li><a href="/">HOME</a></li>
+        <li class="dropdown">
+            <a class="dropbtn">CATEGORIES</a>
+            <div class="dropdown-content">
+                <!-- Electronics -->
+                <div class="dropdown-item">
+                    <a>Electronics</a>
+                    <div class="sub-dropdown">
+                        <a href="#" data-category-id="1">Mobile Devices</a>
+                        <a href="#" data-category-id="2">Computers & Accessories</a>
+                        <a href="#" data-category-id="3">Audio & Video</a>
+                        <a href="#" data-category-id="4">Gaming</a>
+                    </div>
+                </div>
+                <!-- Outfits -->
+                <div class="dropdown-item">
+                    <a>Outfits</a>
+                    <div class="sub-dropdown">
+                        <a href="#" data-category-id="5">Men's Outfits</a>
+                        <a href="#" data-category-id="6">Women's Outfits</a>
+                        <a href="#" data-category-id="7">Children's Outfits</a>
+                        <a href="#" data-category-id="8">Footwear</a>
+                        <a href="#" data-category-id="9">Accessories</a>
+                        <a href="#" data-category-id="10">Jewelry</a>
+                    </div>
+                </div>
+                <!-- Other Categories -->
+                <a href="#" data-category-id="11">Kitchen</a>
+                <a href="#" data-category-id="12">Bedding</a>
+                <a href="#" data-category-id="13">Home Decor</a>
+                <a href="#" data-category-id="14">Beauty</a>
+                <a href="#" data-category-id="15">Sports</a>
+                <a href="#" data-category-id="16">Toys</a>
+                <a href="#" data-category-id="17">Pets</a>
+                <a href="#" data-category-id="18">Office</a>
+                <a href="#" data-category-id="19">Bath</a>
+            </div>
+        </li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/login">LOGIN</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/terms">TERMS AND CONDITIONS</a></li>
+    </ul>
+</section>
+
+
+   
+   <!-- ------ MOBILE NAVIGATION ------- -->
+<section class="mobile-navigation">
+    <div class="mobile-container">
+        <div class="menu" id="menuButton">
+            <i class="fa-solid fa-list"></i>
+        </div>
+    
+        <div class="cart-container" id="mobileCart" data-category-id="0">
+            <i class="fa-solid fa-shopping-cart cart-icon" id="iconCartMobile2"></i>
+            <div class="cart-badge" id="mobileCartCount2">0</div>
+        </div>
+    
+        <!-- Replace Login Icon with Categories Icon -->
+        <div class="categories" id="categoriesButton">
+            <i class="fa-solid fa-tags cart-icon" title="Categories"></i>
+        </div>
+    
+        <div class="cart-container" id="mobileWishlist" data-category-id="0">
+            <i class="fa-regular fa-heart cart-icon" id="iconWishListMobile2"></i> 
+            <div class="cart-badge" id="mobileWishlistCount2">0</div>
+        </div>
+    </div>
+
+    <!-- Hidden Mobile Menu -->
+    <div id="mobileMenu">
+        <button class="close-btn" id="closeButton"><i class="fa-solid fa-times"></i></button>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/login">LOGIN</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/terms">TERMS AND CONDITIONS</a></li>
+        </ul>
+    </div>
+
+    <!-- Hidden Mobile Categories Menu -->
+    <div id="mobileCategoriesMenu">
+        <button class="close-btn" id="closeCategoriesButton"><i class="fa-solid fa-times"></i></button>
+        <ul>
+            <li class="mobile-dropdown">
+                <a>Electronics</a>
+                <ul class="mobile-sub-dropdown">
+                    <li><a href="#" data-category-id="1">Mobile Devices</a></li>
+                    <li><a href="#" data-category-id="2">Computers & Accessories</a></li>
+                    <li><a href="#" data-category-id="3">Audio & Video</a></li>
+                    <li><a href="#" data-category-id="4">Gaming</a></li>
+                </ul>
+            </li>
+            <li class="mobile-dropdown">
+                <a>Outfits</a>
+                <ul class="mobile-sub-dropdown">
+                    <li><a href="#" data-category-id="5">Men's Outfits</a></li>
+                    <li><a href="#" data-category-id="6">Women's Outfits</a></li>
+                    <li><a href="#" data-category-id="7">Children's Outfits</a></li>
+                    <li><a href="#" data-category-id="8">Footwear</a></li>
+                    <li><a href="#" data-category-id="9">Accessories</a></li>
+                    <li><a href="#" data-category-id="10">Jewelry</a></li>
+                </ul>
+            </li>
+            <!-- Other Categories -->
+            <li><a href="#" data-category-id="11">Kitchen</a></li>
+            <li><a href="#" data-category-id="12">Bedding</a></li>
+            <li><a href="#" data-category-id="13">Home Decor</a></li>
+            <li><a href="#" data-category-id="14">Beauty</a></li>
+            <li><a href="#" data-category-id="15">Sports</a></li>
+            <li><a href="#" data-category-id="16">Toys</a></li>
+            <li><a href="#" data-category-id="17">Pets</a></li>
+            <li><a href="#" data-category-id="18">Office</a></li>
+            <li><a href="#" data-category-id="19">Bath</a></li>
+        </ul>
+    </div>
+</section>
+
+
+<script src="/js/title.js"></script>

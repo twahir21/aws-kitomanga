@@ -1,0 +1,321 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+
+}
+
+main{
+    background-color: #f0f2f5;
+    width: 100%;
+    padding: 10px 20px;
+}
+#company-overview h1{
+    padding: 12px 0;
+    font-size: 30px;
+    color: #D71313;
+}
+#company-overview p{
+    padding-bottom: 2rem;
+    font-size: 18px;
+}
+
+#mission-statement h2{
+    padding: 12px 0;
+    font-size: 30px;
+    color: #D71313;
+    margin-top: 30px;
+}
+
+
+#team-info{
+    margin: 50px 0;
+}
+
+#team-info h2{
+    color: #D71313;
+    font-size: 30px;
+    padding: 20px 0;
+}
+
+.contact{
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 0 0 10px 0;
+}
+
+.contact a{
+    font-weight: 700;
+}
+
+.small{
+    padding: 10px 20px;
+}
+
+.small h3{
+    font-size: 21px;
+    color: #D71313;
+}
+
+.small ul{
+    padding-left: 25px;
+}
+
+#team-info{
+    display: flex;
+    flex-direction: column;
+
+}
+footer{
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9DBDFF;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0D1282;
+}
+
+.team{
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+    justify-content: space-between;
+}
+
+.team-member{
+    padding: 5px 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.team-member h3{
+    margin-top: 15px;
+}
+
+.img{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.vertical-line {
+    width: 6px;               
+    height: 250px;            
+    background-color: #0D1282;  
+    margin: 0 30px; 
+    opacity: 0; 
+    display: none;       
+}
+
+.team-member:hover .vertical-line{
+    display: flex;
+    opacity: 1;
+    transition: all .6s ease-in-out;
+}
+
+.team-member:hover{
+    cursor: pointer;
+}
+
+.team-member:hover h3, .team-member:hover img{
+    padding-left: 20px;
+    transition: .6s ease-in-out;
+}
+
+
+.team-member img{
+    width: 250px;
+    border-radius: 50%;
+}
+
+@media (min-width: 1900px){
+    #mission-statement .all-content img{
+        max-width: 40%;
+    }
+}
+
+.all-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3%;
+}
+
+#mission-statement img:hover{
+    transform: scale(1.07);
+    opacity: .8;
+}
+#mission-statement p{
+    padding-bottom: 2rem;
+    font-size: 18px;
+}
+
+.about-container{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+
+/* Global Styles */
+.values {
+    font-family: 'Poppins', sans-serif;
+    background-color: #9DBDFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    width: 100%;
+}
+
+/* Container for the cards */
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Styling for each card */
+.card {
+    flex: 1;
+    height: 80px;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, width 0.5s ease, height 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+}
+
+/* Inner content of the card */
+.card-content {
+    text-align: center;
+    width: 100%;
+}
+
+/* Icon styling */
+.card-title i {
+    font-size: 30px;
+    margin-right: 10px; 
+    transition: opacity 0.3s ease;
+}
+
+/* Title styling */
+.card-title {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 600;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+/* Description styling */
+.card-description {
+    font-size: 14px;
+    color: #f7f7f7;
+    opacity: 0;
+    margin-top: 10px;
+    text-align: center;
+    pointer-events: none;
+    white-space: pre-wrap; /* Allows multi-line */
+    word-wrap: break-word;
+    max-height: 0;
+    padding: 10px;
+    display: none;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+/* Hover effect for each card */
+.card:hover {
+    background-color: #D71313;
+    transform: translateY(-10px);
+    width: 350px; /* Increased width on hover */
+    height: 160px; /* Slightly increased height on hover */
+}
+
+/* Title and icon transformation on hover */
+.card:hover .card-title {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.card:hover .card-title i {
+    opacity: 0; /* Hide icon on hover */
+    display: none;
+}
+
+/* Description reveal on hover */
+.card:hover .card-description {
+    opacity: 1;
+    max-height: 100px; /* Adjust as needed to fit content */
+    display: flex;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card{
+        width: 300px;
+    }
+}
+
+.values-container{
+    margin-top: 50px;
+}
+
+#contact-info{
+    margin-top: 50px;
+}
+
+#cta a{
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+@media (max-width: 900px){
+    .team, .team-member{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .all-content, .team{
+        flex-direction: column;
+    }
+
+}

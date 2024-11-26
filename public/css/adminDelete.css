@@ -1,0 +1,69 @@
+.delete-wrapper {
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.delete-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.delete-container h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.delete-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-container input[type="hidden"] {
+    display: none;
+}
+
+.delete-container button {
+    padding: 12px 20px;
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 20px;
+}
+
+.delete-container button:hover {
+    background-color: #c0392b;
+}
+
+/* Flash Messages Styling */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alert-success {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.alert-danger {
+    background-color: #e74c3c;
+    color: #fff;
+}

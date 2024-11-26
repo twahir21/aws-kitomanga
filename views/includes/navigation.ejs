@@ -1,0 +1,200 @@
+<%- include('../includes/head') %>
+
+<!-- # ------ TOP HEADER -----  -->
+<section class="top-head">
+
+    <div class="social-media">
+        <span><i class="fa-brands fa-facebook"></i></span>
+        <span><i class="fa-brands fa-instagram"></i></span>
+        <span><i class="fa-brands fa-twitter"></i></span>
+    </div>
+
+    <div class="title">
+        <h1>KITOMANGA CARGO AND ONLINE SHOPPING</h1>
+    </div>
+
+    <div class="top-head-actions">
+
+        <select name="currency" title="currency">
+
+            <option value="usd">USD &dollar;</option>
+            <option value="tzs">TZS</option>
+            <option value="kes">KES</option>
+            <option value="ugx">UGX</option>
+            <option value="aed">AED</option>
+            <option value="cyn">CYN</option>
+
+
+          </select>
+
+          <select name="language" title="currency">
+
+            <option value="en-US">English</option>
+            <option value="sw">Swahili</option>
+            <option value="ar">العربية</option>
+
+
+          </select>
+    </div>
+</section>
+
+<!-- # ------ SECOND HEADER ----- -->
+<section class="middle-head">
+    <div class="logo"><h2>KITOMANGA</h2></div>
+
+    <div class="search-container">
+        <div class="search this">
+        <!-- Search Type Select Dropdown -->
+        <select name="searchType" id="searchType" class="search-type" title="search">
+            <option value="product_name">Product Name</option>
+            <option value="brand">Brand</option>
+        </select>
+            <input type="search" name="search" class="search-field" id="searchInput" placeholder="Enter your product name...">
+            <button class="search-btn" title="search">
+                <i class="fa-solid fa-magnifying-glass" title="Search"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fa-solid fa-right-to-bracket" title="Login" id="iconLogin"></i>
+
+        <div class="cart-container">
+            <i class="fa-regular fa-heart cart-icon" title="WishList" id="iconWishList"></i> 
+            <div class="cart-badge" id="wishlistCount">0</div>
+        </div>
+
+        <div class="cart-container">
+            <i class="fa-solid fa-shopping-cart cart-icon" title="Cart" id="iconCart"></i>
+            <div class="cart-badge" id="cartCount">0</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- # -------- THIRD HEADER ------ -->
+<section class="navigation">
+    <ul>
+        <li><a href="/">HOME</a></li>
+        <li class="dropdown">
+            <a class="dropbtn">CATEGORIES</a>
+            <div class="dropdown-content">
+                <!-- Electronics -->
+                <div class="dropdown-item">
+                    <a>Electronics</a>
+                    <div class="sub-dropdown">
+                        <a href="#" data-category-id="1">Mobile Devices</a>
+                        <a href="#" data-category-id="2">Computers & Accessories</a>
+                        <a href="#" data-category-id="3">Audio & Video</a>
+                        <a href="#" data-category-id="4">Gaming</a>
+                    </div>
+                </div>
+                <!-- Outfits -->
+                <div class="dropdown-item">
+                    <a>Outfits</a>
+                    <div class="sub-dropdown">
+                        <a href="#" data-category-id="5">Men's Outfits</a>
+                        <a href="#" data-category-id="6">Women's Outfits</a>
+                        <a href="#" data-category-id="7">Children's Outfits</a>
+                        <a href="#" data-category-id="8">Footwear</a>
+                        <a href="#" data-category-id="9">Accessories</a>
+                        <a href="#" data-category-id="10">Jewelry</a>
+                    </div>
+                </div>
+                <!-- Other Categories -->
+                <a href="#" data-category-id="11">Home Appliances</a>
+                <a href="#" data-category-id="12">Bedding</a>
+                <a href="#" data-category-id="13">Home Decor</a>
+                <a href="#" data-category-id="14">Beauty</a>
+                <a href="#" data-category-id="15">Sports</a>
+                <a href="#" data-category-id="16">Toys</a>
+                <a href="#" data-category-id="17">Pets</a>
+                <a href="#" data-category-id="18">Office</a>
+                <a href="#" data-category-id="19">Bath</a>
+            </div>
+        </li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="/login">LOGIN</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/terms">TERMS AND CONDITIONS</a></li>
+    </ul>
+</section>
+
+   
+   <!-- ------ MOBILE NAVIGATION ------- -->
+<section class="mobile-navigation">
+    <div class="mobile-container">
+        <div class="menu" id="menuButton">
+            <i class="fa-solid fa-list"></i>
+        </div>
+    
+        <div class="cart-container" id="mobileCart" data-category-id="0">
+            <i class="fa-solid fa-shopping-cart cart-icon" id="iconCartMobile"></i>
+            <div class="cart-badge" id="mobileCartCount">0</div>
+        </div>
+    
+        <!-- Replace Login Icon with Categories Icon -->
+        <div class="categories" id="categoriesButton">
+            <i class="fa-solid fa-tags cart-icon" title="Categories"></i>
+        </div>
+    
+        <div class="cart-container" id="mobileWishlist" data-category-id="0">
+            <i class="fa-regular fa-heart cart-icon" id="iconWishListMobile"></i> 
+            <div class="cart-badge" id="mobileWishlistCount">0</div>
+        </div>
+    </div>
+
+    <!-- Hidden Mobile Menu -->
+    <div id="mobileMenu">
+        <button class="close-btn" id="closeButton"><i class="fa-solid fa-times"></i></button>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li><a href="/login">LOGIN</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/terms">TERMS AND CONDITIONS</a></li>
+        </ul>
+    </div>
+
+    <!-- Hidden Mobile Categories Menu -->
+    <div id="mobileCategoriesMenu">
+        <button class="close-btn" id="closeCategoriesButton"><i class="fa-solid fa-times"></i></button>
+        <ul>
+            <li class="mobile-dropdown">
+                <a>Electronics</a>
+                <ul class="mobile-sub-dropdown">
+                    <li><a href="#" data-category-id="1">Mobile Devices</a></li>
+                    <li><a href="#" data-category-id="2">Computers & Accessories</a></li>
+                    <li><a href="#" data-category-id="3">Audio & Video</a></li>
+                    <li><a href="#" data-category-id="4">Gaming</a></li>
+                </ul>
+            </li>
+            <li class="mobile-dropdown">
+                <a>Outfits</a>
+                <ul class="mobile-sub-dropdown">
+                    <li><a href="#" data-category-id="5">Men's Outfits</a></li>
+                    <li><a href="#" data-category-id="6">Women's Outfits</a></li>
+                    <li><a href="#" data-category-id="7">Children's Outfits</a></li>
+                    <li><a href="#" data-category-id="8">Footwear</a></li>
+                    <li><a href="#" data-category-id="9">Accessories</a></li>
+                    <li><a href="#" data-category-id="10">Jewelry</a></li>
+                </ul>
+            </li>
+            <!-- Other Categories -->
+            <li><a href="#" data-category-id="11">Kitchen</a></li>
+            <li><a href="#" data-category-id="12">Bedding</a></li>
+            <li><a href="#" data-category-id="13">Home Decor</a></li>
+            <li><a href="#" data-category-id="14">Beauty</a></li>
+            <li><a href="#" data-category-id="15">Sports</a></li>
+            <li><a href="#" data-category-id="16">Toys</a></li>
+            <li><a href="#" data-category-id="17">Pets</a></li>
+            <li><a href="#" data-category-id="18">Office</a></li>
+            <li><a href="#" data-category-id="19">Bath</a></li>
+        </ul>
+    </div>
+</section>
+
+
+<script src="/js/title.js"></script>

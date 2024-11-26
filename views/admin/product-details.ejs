@@ -1,0 +1,53 @@
+
+<link rel="stylesheet" href="/css/product-details.css">
+
+
+<section id="details">
+
+    
+        <h1>Add Product Details</h1>
+        <!-- Flash messages section -->
+        <% if (success_msg) { %>
+            <div class="alert alert-success">
+                <%= success_msg %>
+            </div>
+        <% } %>
+
+        <% if (error_msg) { %>
+            <div class="alert alert-danger">
+                <%= error_msg %>
+            </div>
+        <% } %>
+        
+        <form action="/admin/add-product-details" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="productId">Product ID:</label>
+                <input type="number" id="productId" name="product_id" min="1" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+        
+            <div class="form-group">
+                <label for="video">Upload Video (optional):</label>
+                <input type="file" id="video" name="video_url" accept="video/*">
+            </div>
+        
+            <div class="form-group">
+                <label for="images">Upload Images (up to 7):</label>
+                <input type="file" id="images" name="images" accept="image/*" multiple required>
+                <p id="imageCount">Selected Images: 0</p>
+                <p id="warning"></p>
+            </div>
+        
+            <button type="submit">Add Product Details</button>
+        </form>
+        
+    
+    
+    <script src="/js/details-home.js"></script>
+
+</section>

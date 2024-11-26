@@ -1,0 +1,37 @@
+
+<link rel="stylesheet" href="/css/editproduct.css">
+
+
+<section id="edit">
+    <h1>Product Management</h1>
+    <input type="text" id="searchInput" placeholder="Search by Product Name" />
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="productTable">
+        <% products.forEach(product => { %>
+        <tr>
+            <td><%= product.id %></td>
+            <td><%= product.product_name %></td>
+            <td><%= product.price %></td>
+            <td>
+                <a href="/admin/product-details/<%= product.id %>">View Details</a> |
+                <a href="/admin/edit-product/<%= product.id %>">Edit</a> |
+                <a href="/admin/delete-product/<%= product.id %>">Delete</a>
+            </td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+</section>
+
+<script src="/js/editproduct.js"></script>

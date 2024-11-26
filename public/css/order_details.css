@@ -1,0 +1,114 @@
+h2{
+    color: #2c3e50;
+    font-size: clamp(16px, 4vw, 22px);
+}
+
+th{
+    font-size: clamp(13px, 4vw, 16px);
+}
+
+.updated-orders-section{
+    padding-top: 20px;
+}
+
+
+.order-details-section{
+    padding-bottom: 20px;
+}
+
+.update-orders {
+    padding: 20px;
+    background-color: #f1f1f1; /* Light background for contrast */
+    border: 1px solid #2c3e50; /* Border using your main color */
+    border-radius: 8px;
+}
+
+.update-orders h2 {
+    color: #2c3e50; /* Main color for headings */
+    margin-bottom: 10px;
+}
+
+.update-orders-select {
+    display: flex;
+    gap: 15px; /* Space between dropdowns */
+    align-items: center; /* Center vertically */
+}
+
+.update-orders-select label {
+    font-size: clamp(14px, 3vw, 16px); /* Responsive font size */
+    color: #2c3e50; /* Main color for text */
+}
+
+.update-orders-select select {
+    padding: 8px 12px; /* Padding for select boxes */
+    border: 1px solid #2c3e50; /* Border matching the theme */
+    border-radius: 4px; /* Rounded corners */
+    font-size: clamp(14px, 3vw, 16px); /* Responsive font size */
+    background-color: white; /* Background color */
+    transition: border-color 0.3s; /* Transition for hover effect */
+}
+
+.update-orders-select select:hover {
+    border-color: #2980b9; /* Change border color on hover */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.update-orders-select select:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #2980b9; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.5); /* Add shadow on focus */
+}
+
+
+.update-orders-select input[type="number"] {
+    padding: 8px 12px; /* Padding for input */
+    border: 1px solid #2c3e50; /* Border matching the theme */
+    border-radius: 4px; /* Rounded corners */
+    font-size: clamp(14px, 3vw, 16px); /* Responsive font size */
+    transition: border-color 0.3s; /* Transition for hover effect */
+}
+
+.update-orders-select input[type="number"]:hover {
+    border-color: #2980b9; /* Change border color on hover */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.update-orders-select input[type="number"]:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #2980b9; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.5); /* Add shadow on focus */
+}
+.update-button {
+    background-color: #2c3e50; /* Your primary color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    font-size: clamp(14px, 3vw, 16px); /* Responsive font size */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    margin-top: 15px; /* Space above the button */
+}
+
+.update-button:hover {
+    background-color: #34495e; /* Darker shade on hover */
+}
+
+@media (max-width: 678px) {
+    .update-orders-select {
+        display: flex;          
+        flex-direction: column; 
+        gap: 10px;             
+    }
+
+    .update-orders-select label {
+        margin-bottom: 5px; 
+    }
+
+    .update-orders-select input[type="number"],
+    .update-orders-select select {
+        width: 100%;          
+        box-sizing: border-box; 
+    }
+}
+

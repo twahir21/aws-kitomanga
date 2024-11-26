@@ -1,0 +1,44 @@
+<section id="addProduct">
+    <h1 class="page-title">Add New Product</h1>
+    <form class="product-form" id="addProductForm" action="/admin/handle-products" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" name="product_name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="brand">Brand name:</label>
+            <input type="text" id="brand" title="brand" name="brand" required>
+        </div>
+
+        <div class="form-group">
+            <label for="productPrice">Price (Tsh):</label>
+            <input type="text" id="productPrice" name="price" required>
+        </div>
+
+        <div class="form-group">
+            <label for="PriceDeleted">Deleted Price (Tsh):</label>
+            <input type="text" id="productPrice" name="price_deleted" required>
+        </div>
+
+        <div class="form-group">
+            <label for="categories">Category:</label>
+            <input type="number" id="categories" name="categories" min="1" max="19" required>
+        </div>
+
+        <div class="form-group">
+            <label for="productImage">Product Image:</label>
+            <div class="custom-file-input">
+                <input type="file" id="productImage" accept="image/*" name="image" required>
+                <label for="productImage">Choose File</label>
+                <span id="fileName">No file chosen</span>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="rating">Rating Value:</label>
+            <input type="text" id="rating" title="rating-stars" name="rating" value="3.5">
+        </div>
+        <button type="submit" class="submit-btn">Add Product</button>
+    </form>
+</section>

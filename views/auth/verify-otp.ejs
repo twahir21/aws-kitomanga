@@ -1,0 +1,54 @@
+<!-- views/auth/verify-otp.ejs -->
+    <title>Verify OTP - Kitomanga</title>
+    <link rel="stylesheet" href="/css/otp.css">
+    <%- include('../includes/title') %>
+
+    <div class="otp-container">
+        <div class="otp-card">
+            <h1>OTP Verification</h1>
+            <p>OTP has been sent to <strong><%= email %></strong></p>
+
+            <!-- Display Flash Messages -->
+            <% if (success_msg) { %>
+                <p style="color:green;"><%= success_msg %></p>
+            <% } %>
+            <% if (error_msg) { %>
+                <p style="color:red;"><%= error_msg %></p>
+            <% } %>
+
+            <!-- Display Validation Errors -->
+            <% if (errors && errors.length > 0) { %>
+                <ul>
+                    <% errors.forEach(error => { %>
+                        <li style="color:red;"><%= error.msg %></li>
+                    <% }); %>
+                </ul>
+            <% } %>
+
+            <form id="verify-otp-form">
+                <!-- Hidden input to carry the email -->
+                <input type="hidden" name="email" value="<%= email %>">
+
+                <div class="otp-card-inputs">
+                    <input type="text" maxlength="1" placeholder="x" autofocus required>
+                    <input type="text" maxlength="1" placeholder="x" required>
+                    <input type="text" maxlength="1" placeholder="x" required>
+                    <input type="text" maxlength="1" placeholder="x" required>
+                    <input type="text" maxlength="1" placeholder="x" required>
+                    <input type="text" maxlength="1" placeholder="x" required>
+                </div>
+
+                <button type="submit" disabled>Verify OTP</button>
+            </form>
+
+            <!-- Resend OTP Form -->
+            <form action="/resend-otp" method="POST" id="resend-otp-form">
+                <p>Didn't get OTP? 
+                <input type="hidden" name="email" value="<%= email %>">
+                <button type="submit" id="resend">Resend OTP</button></p>
+            </form>
+        </div>
+    </div>
+
+      <script src="/js/otp.js"></script>
+    <%- include('../includes/footer.ejs') %>

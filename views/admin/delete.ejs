@@ -1,0 +1,36 @@
+<%- include('../includes/title') %>
+
+<link rel="stylesheet" href="/css/adminDelete.css">
+<div class="delete-wrapper">
+<div class="delete-container">
+<h2>Delete Product</h2>
+
+<!-- Flash Messages -->
+<% if (success_msg && success_msg.length > 0) { %>
+    <div class="alert alert-success">
+        <%= success_msg %>
+    </div>
+<% } %>
+
+<% if (error_msg && error_msg.length > 0) { %>
+    <div class="alert alert-danger">
+        <%= error_msg %>
+    </div>
+<% } %>
+
+<!-- Delete Form -->
+<form id="deleteProductForm" action="/admin/delete-product/<%= product.id %>" method="post">
+    
+    <!-- Hidden input to store product ID (optional if using URL parameter) -->
+    <input type="hidden" name="product_id" value="<%= product.id %>">
+    
+    <p>Are you sure you want to delete the product "<strong><%= product.product_name %></strong>"?</p>
+    
+    <button type="submit" id="deleteButton">Delete Product</button>
+</form>
+</div>
+</div>
+
+<script src="/js/adminDelete.js"></script>
+
+<%- include('../includes/footer') %>

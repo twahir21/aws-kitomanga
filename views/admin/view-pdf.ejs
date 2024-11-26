@@ -1,0 +1,31 @@
+<%- include('../includes/title') %>
+
+<link rel="stylesheet" href="/css/view-pdf.css">
+
+
+<!-- Flash Messages -->
+<% if (success_msg && success_msg.length > 0) { %>
+    <div class="alert alert-success">
+        <%= success_msg %>
+    </div>
+<% } %>
+
+<% if (error_msg && error_msg.length > 0) { %>
+    <div class="alert alert-danger">
+        <%= error_msg %>
+    </div>
+<% } %>
+
+<div class="view-container">
+    <h1>Invoice Viewer</h1>
+    <input type="text" id="invoiceKey" placeholder="Enter Invoice Key" />
+    <button id="viewButton">View Invoice</button>
+
+    <div id="pdfViewer" style="display: none;">
+        <iframe id="pdfFrame" src="" frameborder="0"></iframe>
+    </div>
+
+    <script src="/js/view-pdf.js"></script>
+</div>
+
+<%- include('../includes/footer') %>

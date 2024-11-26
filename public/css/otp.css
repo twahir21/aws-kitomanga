@@ -1,0 +1,131 @@
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.otp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('/img/otp.jpg') no-repeat center center fixed;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.otp-card {
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px -20px black;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: blueviolet;
+}
+
+.otp-card-inputs {
+    margin: 30px 0;
+    display: grid;
+    gap: 15px;
+    justify-content: center;
+    grid-template-columns: repeat(6, auto);
+}
+
+.otp-card-inputs input {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.otp-card p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: grey;
+}
+
+#resend{
+    background-color: transparent;
+    color: blueviolet;
+    padding: 0 6px;
+    font-size: 17px;
+}
+
+#resend:hover{
+    text-decoration: underline;
+}
+
+.otp-card-inputs input::placeholder{
+    color: #dad4d4;
+}
+
+.otp-card-inputs input:focus {
+    outline: 2px solid blueviolet;
+    border-color: transparent;
+}
+
+.otp-card button {
+    background-color: blueviolet;
+    border: none;
+    padding: 15px 50px;
+    font-size: 18px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.otp-card button:hover {
+    opacity: .9;
+}
+
+.otp-card button[disabled] {
+    opacity: .6;
+    cursor: default;
+}
+
+.otp-card p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: grey;
+}
+
+.otp-card p a {
+    color: blueviolet;
+    text-decoration: none;
+}
+
+.otp-card p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 560px){
+    .otp-card{
+        margin: 30px;
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 500px){
+    .otp-card{
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 450px){
+    .otp-card{
+        max-width: 389px;
+    }
+}

@@ -1,0 +1,287 @@
+/* Public Details Page CSS */
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    color: #2c3e50;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding: 25px 0;
+    text-align: center;
+}
+
+
+.details-container {
+    display: flex;
+    padding: 15px 25px;
+    gap: 30px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    background-color: #e4e7e9;
+}
+
+.container{
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    display: flex;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+/* Left Frame (Main Image) */
+.left-frame {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.left-frame img {
+    width: 100%;
+    max-width: 460px;
+    min-height: 60%;
+    max-height: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease-in-out;
+}
+
+.left-frame img:hover {
+    transform: scale(1.03);
+}
+
+/* Right Frame (Product Content) */
+.right-frame {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 4px;
+}
+
+.product-title h2 {
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 5px 0;
+}
+
+.product-title p {
+    color: #7f8c8d;
+    padding: 5px 0;
+}
+
+.product-descr {
+    line-height: 1.6;
+    color: #34495e;
+    padding: 5px 0;
+}
+
+.math-sets {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Price and Quantity */
+.price-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.price{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+.price p, .price del{
+    padding: 0px 6px;
+}
+
+.price p span, .price del, .price-container h2 span{
+    font-family: 'Roboto Mono';
+}
+
+.swal-title {
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    font-family: 'Roboto Mono';
+}
+
+
+
+.price h1, .price-container h2 {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#all{
+    padding: 0 10px;
+}
+
+.price-container h2{
+    padding: 10px 0;
+}
+
+.add-subtract {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.add-subtract button {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.add-subtract button:hover {
+    background-color: hsl(353, 100%, 78%);
+}
+
+#value {
+    padding: 0 5px;
+    font-size: 1.2rem;
+}
+
+/* Size Selector */
+.select select {
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    background-color: #ecf0f1;
+    transition: border-color 0.3s ease;
+}
+
+.select select:hover {
+    border-color: #3498db;
+}
+
+/* Additional Images */
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 450px;
+}
+
+.image-container img {
+    width: clamp(50px, 5vw, 60px);
+    height: clamp(70px, 5vh, 90px);
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #ecf0f1;
+    transition: border-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.image-container img:hover {
+    border-color: #3498db;
+    transform: scale(1.1);
+}
+
+/* Button Styling */
+.button button {
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button button:hover {
+    background-color: hsl(353, 100%, 78%);
+}
+
+/* Video Styling */
+video {
+    width: 100%;
+    max-width: 700px;
+    max-height: 600px;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .details-container {
+        flex-direction: column;
+        align-items: center;
+        align-content: flex-start;
+    }
+
+    h1{
+        text-align: start;
+    }
+
+    .left-frame, .right-frame {
+        width: 100%;
+    }
+
+    .left-frame img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 870px){
+    .container{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px){
+    .details-container{
+        padding: 10px 15px;
+    }
+
+    .container{
+        max-width: 400px;
+    }
+
+    .image-container img{
+        width:30px;
+        height: 30px;
+    }
+}
+
+/* CSS for sweetalert2 */
+.custom-title-font {
+    font-size: clamp(19px, 3vw, 25px);  /* Responsive font size */
+    font-weight: 500;
+    color: #2c3e50;  /* Your primary color */
+  }
+  
+  /* Custom font size for SweetAlert text */
+  .custom-text-font {
+    font-size: clamp(18px, 2vw, 24px);  /* Responsive font size */
+    color: #34495e;
+  }
+  
+  /* Custom font size for SweetAlert button */
+  .custom-btn-font {
+    font-size: clamp(16px, 1.5vw, 20px);  /* Responsive font size */
+    padding: 10px 20px;
+    background-color: #2c3e50;  /* Button background color */
+    color: #fff;
+    border-radius: 8px;
+  }
+
+  .custom-btn-font:hover{
+    background-color: hsl(353, 100%, 78%);
+  }
+  

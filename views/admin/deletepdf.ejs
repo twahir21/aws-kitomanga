@@ -1,0 +1,63 @@
+<%- include('../includes/title') %>
+<style>
+    .pdf-wrapper {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .delete-button {
+        background-color: #2c3e50;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-left: 20px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+    .delete-button:hover {
+        transform: translateY(5px);
+    }
+    h2, th{
+        color: #333;
+    }
+</style>
+</head>
+<body>
+    <div class="pdf-wrapper">
+        <h2>Manage PDF Files</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>File Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% pdfFiles.forEach(file => { %>
+                    <tr>
+                        <td><input type="checkbox" name="files" value="<%= file %>"></td>
+                        <td><%= file %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <button class="delete-button" id="deleteButton">Delete Selected Files</button>
+    </div>
+
+<script src="/js/deletepdf.js"></script>
+<%- include('../includes/footer') %>

@@ -1,0 +1,128 @@
+<%- include('./includes/title') %>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+/* Wrapper to prevent includes from affecting horizontal scroll */
+.temp-cart-wrapper {
+  padding: 20px;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden; /* Ensures no unwanted horizontal scroll from includes */
+}
+
+h2 {
+  color: #ff8f9c;
+  font-weight: 500;
+  font-size: clamp(15px, 4vw, 22px);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+th {
+  color: #383737;
+}
+
+.cart-container-temp {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  min-width: 600px; /* Prevents table from becoming too narrow */
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+img {
+  width: 50px;
+  height: auto;
+}
+
+button {
+  background-color: #ff8f9c;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-weight: 500;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Custom scrollbar styles */
+.cart-container-temp::-webkit-scrollbar {
+  height: 8px; /* Adjust scrollbar height */
+}
+
+.cart-container-temp::-webkit-scrollbar-thumb {
+  background-color: #ff8f9c; /* Scrollbar thumb color */
+  border-radius: 10px; /* Rounded scrollbar thumb */
+}
+
+.cart-container-temp::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Scrollbar track color */
+}
+
+.cart-container-temp {
+  scrollbar-width: thin; /* Firefox scrollbar thickness */
+  scrollbar-color: #ff8f9c #f0f0f0; /* Firefox thumb and track color */
+}
+
+@media (max-width: 600px) {
+  th, td {
+    padding: 8px;
+  }
+
+  img {
+    width: 40px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="temp-cart-wrapper">
+    <div class="cart-container-temp">
+        <h2>Your temporary Cart</h2>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product ID</th>
+                    <th>Quantity</th>
+                    <th>Size</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be injected here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="/js/iconCart.js"></script>
+<%- include('./includes/footer') %>

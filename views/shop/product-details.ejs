@@ -1,0 +1,91 @@
+<%- include('../includes/navigation') %>
+
+<link rel="stylesheet" href="/css/publicDetails.css">
+<div class="details-container">
+
+    <div class="top">
+        <h1>Product Details</h1>
+        <% if (productDetails) { %>
+            <div class="container">
+    
+                <div class="left-frame">
+                    <!-- Display the main image (first image) -->
+                    <img src="<%= productDetails.images[0] %>" alt="Main image" id="mainImage">
+                </div>       
+                
+                <div class="right-frame">
+                    <div class="wrapper">
+                        <div class="product-title">
+                            <p><%= productDetails.brand %></p>
+                            <h2><%= productDetails.product_name %></h2>
+                        </div>
+    
+                        <div class="product-descr">
+                            <p><%= productDetails.description %></p>
+                        </div>
+                        <input type="hidden" name="product_id" value="<%= productDetails.product_id %>" id="product_id">
+    
+                        <div class="math-sets">
+                            
+                            <div class="add-subtract">
+                                <span>Quantity: </span><button id="add">+</button>
+                                <p id="value">0</p>
+                                <button id="subtract">-</button>
+                            </div>
+    
+                            <div class="select">
+                                <span class="sizes">Sizes:</span>
+                                <select name="size" id="size" title="Sizes">
+                                    <option value="none" class="option">none</option>
+                                    <option value="small" class="option">Small</option>
+                                    <option value="medium" class="option">Medium</option>
+                                    <option value="large" class="option">Large</option>
+                                    <option value="X-large" class="option">X-Large</option>
+                                    <option value="XX-Large" class="option">XX-Large</option>
+                                </select>
+                            </div>
+    
+                            <div class="price-container">
+                                <div class="price">
+                                    <h1>Price:</h1>
+                                    <p>TZS: <span id="productPrice"><%= productDetails.price %></span></p>
+                                    <del>TZS:<%= productDetails.price_deleted %></del>
+                                </div>
+                                <h2>Total: <span id="all"><span id="total">0.00</span>/=</span></h2>
+                            </div>
+    
+                            <!-- Display the rest of the images using a loop -->
+                            <div class="image-container">
+                                <% for (let i = 1; i < productDetails.images.length; i++) { %>
+                                    <img src="<%= productDetails.images[i] %>" alt="image" id="image<%= i %>">
+                                <% } %>
+                            </div>
+                            
+                            <div class="button">
+                                <button id="cart">Add All to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="video-content">
+        <h3>Video:</h3>
+        <% if (productDetails.video) { %>
+            <video autoplay muted loop>
+                <source src="<%= productDetails.video %>" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <% } else { %>
+            <p>No video to be displayed.</p>
+        <% } %>
+
+    <% } else { %>
+        <%- include('./product-not-found') %>
+    <% } %>
+    </div>
+</div>
+
+<script src="/js/publicDetails.js"></script>
+<%- include('../includes/footer.ejs') %>

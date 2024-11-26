@@ -1,0 +1,130 @@
+<%- include('./includes/title.ejs') %>
+<link rel="stylesheet" href="/css/contact.css">
+<style>
+/* Loader styling */
+#loaderContact {
+    display: none; /* Initially hidden */
+    width: 40px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Higher than the overlay to stay visible */
+}
+
+#loaderContact:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    --c: #0000, #ffffff 1deg 120deg, #0000 121deg; /* White loader */
+    background:
+        conic-gradient(from 0deg, var(--c)) top right,
+        conic-gradient(from 120deg, var(--c)) bottom,
+        conic-gradient(from 240deg, var(--c)) top left;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    animation: l25 2s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+/* Loader spinning animation */
+@keyframes l25 {
+    33% { inset: -8px; transform: rotate(0deg); }
+    66% { inset: -8px; transform: rotate(180deg); }
+    100% { inset: 0; transform: rotate(180deg); }
+}
+
+/* Overlay styling */
+#overlayContact {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black overlay */
+    z-index: 1000; /* Just below the loader */
+}
+
+</style>
+
+<body>    
+
+
+<div class="contact-container">
+    
+<div class="container" id="contact-form">
+    <div id="overlayContact" class="overlayContact"></div>
+    <div id="loaderContact" class="loaderContact"></div>
+
+    <span class="big-circle"></span>
+    <div class="form">
+        <div class="contact-info page">
+            <h3 class="title contact">Let's get in touch</h3>
+            <p class="text">
+                Welcome to Kitomanga store! We're dedicated to helping with product inquiries, order assistance, and feedback.
+                Our support team is ready to assist you, and we value your suggestions.
+                Visit our <a href="/faq" id="FAQ">FAQ page</a> for common questions or fill out the form, and we'll respond promptly.
+            </p>
+            <div class="info">
+                <div class="information">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>6 Street-Naif Rd-Daira-Dubai</p>
+                </div>
+                <div class="information">
+                    <i class="fa-solid fa-address-card"></i>
+                    <p>twahirsudy3@gmail.com</p>
+                </div>
+                <div class="information">
+                    <i class="fa-solid fa-phone"></i>
+                    <p> 0523712129 </p>
+                </div>
+            </div>
+            <div class="social-media">
+                <p>Connect with us :</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook fa-beat"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter fa-beat"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-beat"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube fa-beat"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form">
+
+            <form id="contact-form" action="/send-mail" autocomplete="off" method="post">
+                <h3 class="title contact">Contact us</h3>
+                <div class="input-container">
+                    <input type="text" name="name" class="input" placeholder="name" autocomplete="off">
+                    <label for="">Username</label>
+                    <span>Username</span>
+                </div>
+                <div class="input-container">
+                    <input type="email" name="email" class="input" placeholder="email" autocomplete="off">
+                    <label for="">Email</label>
+                    <span>Email</span>
+                </div>
+                <div class="input-container">
+                    <input type="tel" name="phone" class="input" placeholder="phone">
+                    <label for="">Phone</label>
+                    <span>Phone</span>
+                </div>
+                <div class="input-container textarea">
+                    <textarea name="message" class="input" placeholder="your message" autocomplete="off"></textarea>
+                    <label for="">Message</label>
+                    <span>Message</span>
+                </div>
+                <input type="submit" value="Send" class="btn">
+            </form>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script src="/js/contact.js"></script>
+<%- include('./includes/footer.ejs') %>
+
+</body>
+</html>

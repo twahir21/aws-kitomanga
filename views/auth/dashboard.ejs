@@ -1,0 +1,147 @@
+<%- include('../includes/title') %>
+
+<link rel="stylesheet" href="/css/users.css">
+<div class="user-container">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="welcome">Welcome back, <%= user %>!</div>
+        <button class="logout-btn" id="logout">Logout</button>
+    </div>
+
+    <input type="hidden" name="username" value="<%= user %>" id="username">
+    <input type="hidden" name="user_id" value="<%= user_id %>" id="user_id">
+
+
+    <!-- User Information Section -->
+    <div class="user-info">
+        <h2>Account Information</h2>
+<!-- Email Field -->
+<div class="info-field" id="email-field">
+    <label for="email">Email:</label>
+    <span id="email-value"><%= email %></span>
+    <button class="edit-btn" data-field="email">Edit</button>
+</div>
+
+<!-- Editable Email Form (hidden by default) -->
+<form class="edit-form" id="edit-email-form" style="display: none;">
+    <input type="email" id="email-input" value="<%= email %>" required>
+    <div>
+        <button type="button" class="save-btn" data-field="email">Save</button>
+        <button type="button" class="cancel-btn" data-field="email">Cancel</button>
+    </div>
+</form>
+
+<!-- Phone Field -->
+<div class="info-field" id="phone-field">
+    <label for="phone">Phone:</label>
+    <span id="phone-value"><%= phone || 'N/A' %></span>
+    <button class="edit-btn" data-field="phone">Edit</button>
+</div>
+
+<!-- Editable Phone Form (hidden by default) -->
+<form class="edit-form" id="edit-phone-form" style="display: none;">
+    <input type="tel" id="phone-input" value="<%= phone || '' %>" required pattern="^\+?[0-9]{10,15}$" title="Enter a valid phone number">
+    <div>
+        <button type="button" class="save-btn" data-field="phone">Save</button>
+        <button type="button" class="cancel-btn" data-field="phone">Cancel</button>
+    </div>
+</form>
+
+<!-- Address Field -->
+<div class="info-field" id="address-field">
+    <label for="address">Address:</label>
+    <span id="address-value"><%= address %></span>
+    <button class="edit-btn" data-field="address">Edit</button>
+</div>
+
+<!-- Editable Address Form -->
+<form class="edit-form" id="edit-address-form" style="display: none;">
+    <input type="text" id="address-input" value="<%= address %>" required>
+    <div>
+        <button type="button" class="save-btn" data-field="address">Save</button>
+        <button type="button" class="cancel-btn" data-field="address">Cancel</button>
+    </div>  
+</form>
+
+
+
+    
+    <div class="cart-wrapper">
+        <h2>Your Cart</h2>
+    
+        <% if (cart.length > 0) { %>
+            <% cart.forEach(item => { %>
+                <div class="cart-item">
+                    <div class="product-details">
+                        <span><strong>Product:</strong> <%= item.product_name %></span>
+                        <span><strong>Size:</strong> <%= item.size %></span>
+                        <span><strong>Price:</strong> TZS: <%= item.price %></span>
+                        <span><strong>Quantity:</strong> <%= item.quantity %></span>
+                    </div>
+                    <div class="product-image">
+                        <img src="<%= item.mainimage %>" alt="<%= item.product_name %>">
+                    </div>
+                    <div class="product-subtotal">
+                        TZS: <span class="priceValues">
+                            <%= new Intl.NumberFormat().format(Number((Number(item.price.replace(/,/g, '')) * item.quantity).toFixed(2))) %>
+                        </span>
+                    </div>
+                    
+                    <button class="remove-button" data-product="<%= item.product_id %>" data-size="<%= item.size %>">Remove</button>
+                </div>
+            <% }); %>
+            
+        <% } else { %>
+            <p>Your cart is empty.</p>
+        <% } %>
+    
+        <!-- Total -->
+        <div class="cart-footer">
+            <h2>Total: <span id="totalCart">
+                <%= new Intl.NumberFormat().format(cart.reduce((total, item) => {
+                    // Check if item.price is not null or undefined
+                    const price = item.price ? parseFloat(item.price.replace(/,/g, '')) : 0; // Use item.price instead of item.product_price
+                    return total + (price * item.quantity);
+                }, 0)) %>
+            </span>/=</h2>
+        </div>
+        
+        
+
+    
+        <div class="order">
+            <button class="place-order-button">Place Order</button>
+        </div>
+    </div>
+    
+
+<!-- Recent Orders Section -->
+<div class="recent-orders">
+    <h2>Recent Orders</h2>
+
+    <% orders.forEach(order => { %>
+        <!-- Order -->
+        <div class="order">
+            <div class="order-details">
+                <p><strong>Order ID:</strong> #<%= order.order_id %></p>
+                <p><strong>Date:</strong> <%= order.created_at %></p>
+                <p><strong>Total:</strong> TZS: <%= order.total_price %>/=</p>
+            </div>
+            <div class="order-status">
+                <span class="status"><%= order.status %></span> 
+            </div> 
+                <!-- Download Invoice Button -->
+            <div class="invoice">
+                <button class="download-invoice-button" data-order-id="<%= order.order_id %>">Download PDF</button>
+            </div>    
+        </div>
+    <% }) %>
+
+</div>
+</div>
+
+
+<script src="/js/user.js"></script>
+
+<%- include('../includes/footer') %>

@@ -1,0 +1,412 @@
+/* -------- MAIN CSS ----------- */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #ecf0f1;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --border-color: #ddd;
+    --button-color: #3498db;
+    --button-hover-color: #2980b9;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family);
+    box-sizing: border-box;
+}
+
+.user-container {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.header .welcome {
+    font-size: 26px;
+    letter-spacing: 1.4px;
+    font-family: "Permanent Marker";
+}
+
+.header .logout-btn {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.header .logout-btn:hover {
+    background-color: darkred;
+}
+
+/* User Info Section */
+.user-info {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.user-info h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.info-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-field label {
+    font-weight: 600;
+    width: 150px;
+}
+
+.info-field span {
+    flex: 1;
+}
+
+.info-field button {
+    background-color: var(--button-color);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.info-field button:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Editable Fields */
+.edit-form {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-form input {
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.edit-form button {
+    width: 100px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.save-btn {
+    background-color: var(--button-color);
+    color: white;
+    margin-right: 10px;
+}
+
+.save-btn:hover {
+    background-color: var(--button-hover-color);
+}
+
+.cancel-btn {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #7f8c8d;
+}
+
+/* Recent Orders Section */
+.recent-orders {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recent-orders h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.order {
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order:last-child {
+    border-bottom: none;
+}
+
+.order-details {
+    flex: 2;
+}
+
+.order-details p {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.order-status {
+    flex: 1;
+    text-align: right;
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.cart-wrapper {
+    background-color: #ffffff;
+    padding: 20px;
+    max-width: 100%;
+    margin: 40px 0;
+    border-radius: 8px;
+    border: 3px solid #cfcfcf;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #413e3e;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item .product-details {
+    flex: 1;
+}
+
+.cart-item .product-details span {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.cart-item .product-price,
+.cart-item .product-quantity,
+.cart-item .product-subtotal {
+    text-align: center;
+    width: 80px;
+}
+
+.cart-item .remove-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item .remove-button:hover {
+    background-color: #ff1a1a;
+}
+
+.product-image img {
+    width: 80px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.cart-footer {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.cart-footer h2 {
+    font-size: 24px;
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+#totalCart {
+    font-weight: 600;
+    padding-left: 12px;
+    margin: 0;
+}
+
+.recent-orders{
+    background-color: #ecf0f1;
+}
+
+.order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order > button {
+    padding: 5px 20px;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: #ff4d4d;
+    outline: none;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item .product-details,
+    .cart-item .product-price,
+    .cart-item .product-quantity,
+    .cart-item .product-subtotal {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .cart-item .remove-button {
+        align-self: flex-end;
+    }
+
+    .info-field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info-field label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .order {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-status {
+        text-align: left;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cart-wrapper {
+        padding: 10px;
+    }
+
+    .cart-item .product-image img {
+        width: 60px;
+    }
+
+    .cart-footer h2 {
+        font-size: 20px;
+    }
+}
+
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #413e3e;
+}
+
+.cart-item .product-details {
+    flex: 1;
+}
+
+.cart-item .product-image {
+    margin-right: 20px; /* Increase space between image and subtotal */
+}
+
+.cart-item .product-subtotal {
+    text-align: center;
+    width: 80px;
+    margin-right: 20px; /* Increase space between subtotal and remove button */
+}
+
+.cart-item .remove-button {
+    background-color: #D71313;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item .remove-button:hover {
+    background-color: #ff1a1a;
+}
+
+.download-invoice-button, .preview-invoice-button{
+    background-color: #D71313;
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin: 10px 0;
+    font-weight: 400;
+    font-size: clamp(13px, 4vw, 16px);
+}
+
+.download-invoice-button{
+    margin-left: 15px;
+}
+
+@media (max-width: 768px){
+    .download-invoice-button{
+        margin-left: 0px;
+    }
+}
+
+.preview-invoice-button{
+    background-color: #0D1282;
+}
+.invoice{
+    display: flex;
+    gap: 15px;
+}
